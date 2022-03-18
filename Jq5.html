@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+        div{
+            border: 2px solid red;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        p{
+            border: 2px solid green;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        span{
+            border: 2px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="btn">Parent</button>    
+    <button id="btn2">Parents</button>
+    <button id="btn3">ParentsUntil</button>
+    <button id="btn4">Children</button>
+    <button id="btn5">Find</button>
+    
+    <div>
+
+        <p>
+
+            <span>
+
+                Hello Word!
+
+            </span>
+
+        </p>
+
+    </div>
+
+    <script>
+
+        $(function() {
+            $("#btn").click(function() {
+                $("span").parent().css("border","2px solid blue");
+            })
+        })
+
+        $(function() {
+            $("#btn2").click(function() {
+                $("span").parents().css("border","2px solid blue");
+            })
+        })
+
+        $(function() {
+            $("#btn3").click(function() {
+                $("span").parentsUntil("body").css("border","2px solid blue");
+            })
+        })
+
+        $(function() {
+            $("#btn4").click(function() {
+                $("div").children().css("border","2px solid blue");
+            })
+        })
+
+        $(function() {
+            $("#btn5").click(function() {
+                $("div").find("span").css("border","2px solid blue");
+            })
+        })
+
+    </script>
+
+</body>
+</html>
